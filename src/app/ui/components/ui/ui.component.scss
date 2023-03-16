@@ -6,6 +6,10 @@
   background-color: var(--app-light);
 }
 
+.close-nav {
+  width: 0px;
+}
+
 header {
   background-color: var(--app-darklight);
 }
@@ -16,6 +20,7 @@ aside {
 
 nav {
   width: 250px;
+  transition: 500ms;
 }
 
 footer {
