@@ -29,9 +29,9 @@ export class AppComponent {
     // this.subj$.subscribe((data) => console.log(data));
     // this.subj$.next(Math.random());
 
-    this.behav$.subscribe((data) => console.log(data));
-    this.behav$.next(2);
-    this.behav$.next(Math.random());
-    this.behav$.subscribe((data) => console.log(data));
+    // this.behav$.subscribe((data) => console.log(data));
+    // this.behav$.next(2);
+    // this.behav$.next(Math.random());
+    // this.behav$.subscribe((data) => console.log(data));
   }
 }
