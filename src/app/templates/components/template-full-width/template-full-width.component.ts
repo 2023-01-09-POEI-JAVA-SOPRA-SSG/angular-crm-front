@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-template-full-width',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./template-full-width.component.scss'],
 })
 export class TemplateFullWidthComponent {
-  public title: string;
+  @Input() public title: string;
 
   constructor() {
     this.title = 'Le titre est ici';

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-template-container',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./template-container.component.scss'],
 })
 export class TemplateContainerComponent {
-  public title: string;
+  @Input() public title: string;
 
   constructor() {
     this.title = 'Ohhhhh le joli title';
