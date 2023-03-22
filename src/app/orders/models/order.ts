@@ -10,4 +10,9 @@ export class Order implements OrderI {
   client!: string;
   comment!: string;
   id!: number;
+  constructor(obj?: Partial<Order>) {
+    if (obj) {
+      Object.assign(this, obj);
+    }
+  }
 }
