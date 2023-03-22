@@ -1,3 +1,11 @@
 .active {
   background-color: var(--app-light);
+  color: var(--app-primary);
+}
+
+a {
+  color: var(--app-light);
+  &:hover {
+    color: var(--app-primary);
+  }
 }
