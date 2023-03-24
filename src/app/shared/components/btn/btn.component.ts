@@ -8,4 +8,9 @@ import { Component, Input } from '@angular/core';
 export class BtnComponent {
   @Input() public label!: string;
   @Input() public route!: string;
+  @Input() public isdisabled: boolean;
+
+  constructor() {
+    this.isdisabled = false;
+  }
 }

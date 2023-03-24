@@ -1,1 +1,48 @@
-<p>page-edit-order works!</p>
+<app-template-container title="Edit order">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="form">
+    <div>
+      <label for="typePresta">Type</label>
+      <input type="text" class="form-control" id="typePresta" formControlName="typePresta">
+    </div>
+    <div class="alert alert-danger" *ngIf="form.controls['typePresta'].invalid && form.controls['typePresta'].touched">
+      champ invalide
+    </div>
+
+    <div>
+      <label for="client">Client</label>
+      <input type="text" class="form-control" id="client" formControlName="client">
+    </div>
+
+    <div>
+      <label for="nbJours">Period</label>
+      <input type="number" class="form-control" id="nbJours" formControlName="nbJours">
+    </div>
+
+    <div>
+      <label for="tjmHt">Unit price</label>
+      <input type="number" class="form-control" id="tjmHt" formControlName="tjmHt">
+    </div>
+
+    <div>
+      <label for="tva">VAT</label>
+      <input type="number" class="form-control" id="tva" formControlName="tva">
+    </div>
+
+    <div>
+      <label for="state">State</label>
+      <select class="form-control form-select" id="state" formControlName="state">
+        <option *ngFor="let state of states" [value]="state">
+          {{ state }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label for="comment">Comment</label>
+      <input type="text" class="form-control" id="comment" formControlName="comment">
+    </div>
+
+    <app-btn [isdisabled]="form.invalid" type="submit" label="Submit"></app-btn>
+
+  </form>
+</app-template-container>

@@ -16,6 +16,10 @@ export class OrdersService {
     this.collection$ = this.httpClient.get<Order[]>(this.urlApi);
   }
 
+  public getById(id: number): Observable<Order> {
+    return this.httpClient.get<Order>(`${this.urlApi}/${id}`);
+  }
+
   public changeState(order: Order, state: StateOrder): Observable<Order> {
     const obj = new Order(order);
     obj.state = state;
@@ -24,5 +28,9 @@ export class OrdersService {
 
   public update(order: Order): Observable<Order> {
     return this.httpClient.put<Order>(`${this.urlApi}/${order.id}`, order);
+  }
+
+  public add(order: Order): Observable<Order> {
+    return this.httpClient.post<Order>(`${this.urlApi}`, order);
   }
 }

@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { IconsModule } from '../icons/icons.module';
 import { TemplatesModule } from '../templates/templates.module';
@@ -10,6 +11,13 @@ import { TotalPipe } from './pipes/total.pipe';
 @NgModule({
   declarations: [BtnComponent, TableLightComponent, TotalPipe],
   imports: [CommonModule, RouterModule],
-  exports: [TemplatesModule, IconsModule, BtnComponent, TableLightComponent, TotalPipe],
+  exports: [
+    TemplatesModule,
+    IconsModule,
+    ReactiveFormsModule,
+    BtnComponent,
+    TableLightComponent,
+    TotalPipe,
+  ],
 })
 export class SharedModule {}
