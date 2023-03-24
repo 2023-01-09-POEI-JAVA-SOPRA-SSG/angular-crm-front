@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { StateOrder } from '../../enums/state-order';
 import { Order } from '../../models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -12,7 +12,7 @@ import { OrdersService } from '../../services/orders.service';
 })
 export class PageListOrdersComponent {
   public title: string;
-  public collection$!: Observable<Order[]>;
+  public collection$!: BehaviorSubject<Order[]>;
   public states: string[];
   public headers: string[];
 
@@ -39,7 +39,11 @@ export class PageListOrdersComponent {
     });
   }
 
-  public goToEdit(id: number) {
+  public goToEdit(id: number): void {
     this.router.navigate(['orders', 'edit', id]);
+  }
+
+  public deleteItem(id: number): void {
+    this.ordersService.delete(id).subscribe();
   }
 }
